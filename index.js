@@ -1,4 +1,5 @@
 const numberOfDrumButtons = document.querySelectorAll(".drum").length;
+// image selection
 
 for (let i=0; i<numberOfDrumButtons; i++){
     document.querySelectorAll(".drum")[i].addEventListener("click", function ()  {
@@ -10,13 +11,15 @@ buttonAnimation(buttonInnerHTML);
     });
 }
 
-
+// sound 
+// keydown instead of keypress
 document.addEventListener("keydown", function (event) { 
   makeSound(event.key);
   buttonAnimation(event.key);
 });
 
-
+// Switch statement
+// add sound
 function makeSound(key) {
 
   switch (key) {
@@ -58,11 +61,10 @@ function makeSound(key) {
 
 }
 
-
+// animation 
 function buttonAnimation(currentkey) {
 
 var activeButton = document.querySelector("." + currentkey);
-
 
 activeButton.classList.add("pressed");
 setTimeout(() => {
